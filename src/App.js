@@ -8,7 +8,7 @@ export default function App() {
     <StyledPageContainer>
       <HeadingContainer>
         To Do App
-        <icon />
+        {/* <themeIcon fxn /> */}
         {/* would be at the edge of the heading container  */}
       </HeadingContainer>
       <TaskCreation></TaskCreation>
