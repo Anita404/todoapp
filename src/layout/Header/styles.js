@@ -9,6 +9,14 @@ export const Container = styled.div`
   padding: 70px;
 `;
 
+export const HeaderContainer = styled.div`
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Title = styled.h1`
   color: white;
   font-size: 40px;
@@ -16,5 +24,4 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: normal;
   letter-spacing: 15px;
-  padding-top: 10px;
 `;
