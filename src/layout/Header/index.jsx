@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, HeaderContainer, Title } from "./styles";
 import MoonIcon from "../../Icons/MoonIcon.svg";
-import { TaskContainer } from "../../TaskCreation/styles";
-import { TaskButton, TaskToDo } from "../../App.styles";
+import TaskCreation from "../../Components/TaskCreation";
 
 const Header = () => {
   return (
@@ -11,10 +10,7 @@ const Header = () => {
         <Title> TODO </Title>
         <MoonIcon />
       </Container>
-      <TaskContainer>
-        <TaskButton />
-        <TaskToDo />
-      </TaskContainer>
+      <TaskCreation />
     </HeaderContainer>
   );
 };

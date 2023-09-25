@@ -6,7 +6,7 @@ export const Container = styled.div`
   z-index: 1;
   width: 540px;
   justify-content: space-between;
-  padding: 70px;
+  margin-top: 70px;
 `;
 
 export const HeaderContainer = styled.div`
@@ -15,6 +15,7 @@ export const HeaderContainer = styled.div`
   z-index: 1;
   display: flex;
   justify-content: center;
+  margin-bottom: 24px;
 `;
 
 export const Title = styled.h1`
