@@ -2,13 +2,17 @@ import React from "react";
 import Page from "./layout/Page/index";
 import Header from "./layout/Header";
 import ToDoList from "./Components/ToDoList";
+import { Provider } from "react-redux";
+import store from "./Store/store";
 
 export default function App() {
   return (
-    <Page>
-      <Header />
-      <ToDoList />
-    </Page>
+    <Provider store={store}>
+      <Page>
+        <Header />
+        <ToDoList />
+      </Page>
+    </Provider>
   );
 }
 
