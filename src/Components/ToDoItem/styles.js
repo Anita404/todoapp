@@ -17,3 +17,8 @@ export const Container = styled.div`
     border-bottom: none;
   }
 `;
+
+export const FinishedActivity = styled.div`
+  color: #d1d2da;
+  text-decoration-line: line-through;
+`;

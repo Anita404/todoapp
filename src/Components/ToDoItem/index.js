@@ -1,13 +1,12 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, FinishedActivity } from "./styles";
 import Checkbox from "../CheckboxButton";
-import Input from "../Input";
 
-const ToDoItem = ({ activity }) => {
+const ToDoItem = ({ activity, status, id }) => {
   return (
     <Container>
-      <Checkbox />
-      {activity}
+      <Checkbox onClick={onClick} status={status} />
+      {!status ? <FinishedActivity> {activity} </FinishedActivity> : activity}
     </Container>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Container,
   FilterButton,
@@ -15,7 +15,7 @@ const ToDoList = () => {
   return (
     <Container>
       {todoList.map((todo) => (
-        <ToDoItem activity={todo.activity} />
+        <ToDoItem activity={todo.activity} status={todo.status} id={todo.id} />
       ))}
       <Footer>
         <FooterItem> 5 items left </FooterItem>

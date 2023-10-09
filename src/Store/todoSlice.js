@@ -1,9 +1,9 @@
 const initialState = {
   todos: [
-    { activity: "Jog around and find out" },
-    { activity: "Feed spiteful cat" },
-    { activity: "Learn frontend w/Frontend God" },
-    { activity: "Figure out life" },
+    { id: 1, activity: "Jog around and find out", status: false },
+    { id: 2, activity: "Feed spiteful cat", status: true },
+    { id: 3, activity: "Learn frontend w/Frontend God", status: true },
+    { id: 4, activity: "Figure out life", status: true },
   ],
 };
 
@@ -12,9 +12,13 @@ const todoSlice = (state = initialState, action) => {
     case "addTodo":
       return {
         ...state,
-        todos: [...state.todos, { activity: action.payload }],
+        todos: [...state.todos, { activity: action.payload, status: true }],
       };
-
+    case "removeTodo": //need to change status to false targetting specific id upon click // dispatch - have to add smtng 
+      return {
+        ...state,
+        todos: [...state.todos, { id:  }],
+      };
     default:
       return initialState;
   }
