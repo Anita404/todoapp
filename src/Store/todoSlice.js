@@ -12,16 +12,29 @@ const todoSlice = (state = initialState, action) => {
     case "addTodo":
       return {
         ...state,
-        todos: [...state.todos, { activity: action.payload, status: true }],
-      };
-    case "removeTodo": //need to change status to false targetting specific id upon click // dispatch - have to add smtng
-      return {
-        ...state,
         todos: [
-          ...state.todos.filter((todos) => todos !== action.payload),
-          { id: action.payload, status: false },
+          ...state.todos,
+          {
+            activity: action.payload,
+            status: true,
+            id: state.todos.length + 1,
+          },
         ],
       };
+    case "toggleTodo": {
+      return {
+        ...state,
+        todos: state.todos.map((todo) => {
+          if (todo.id == action.payload) {
+            return {
+              ...todo,
+              status: !todo.status,
+            };
+          }
+          return todo;
+        }),
+      };
+    }
     default:
       return initialState;
   }

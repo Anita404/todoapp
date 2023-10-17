@@ -11,14 +11,17 @@ import { useSelector } from "react-redux";
 
 const ToDoList = () => {
   const todoList = useSelector((state) => state.todosReducer.todos);
-
+  const remainingTodos = useSelector(
+    (state) => state.todosReducer.todos.length
+  );
+  console.log(todoList);
   return (
     <Container>
       {todoList.map((todo) => (
         <ToDoItem activity={todo.activity} status={todo.status} id={todo.id} />
       ))}
       <Footer>
-        <FooterItem> 5 items left </FooterItem>
+        <FooterItem> {remainingTodos} items left </FooterItem>
         <FiltersContainer>
           <FilterButton> All </FilterButton>
           <FilterButton> Active </FilterButton>
