@@ -1,10 +1,18 @@
+const defaultValues = [
+  { id: 1, activity: "Jog around and find out", status: true },
+  { id: 2, activity: "Feed spiteful cat", status: true },
+  { id: 3, activity: "Learn frontend w/Frontend God", status: true },
+  { id: 4, activity: "Figure out life", status: true },
+];
+
 const initialState = {
-  todos: [
-    { id: 1, activity: "Jog around and find out", status: true },
-    { id: 2, activity: "Feed spiteful cat", status: true },
-    { id: 3, activity: "Learn frontend w/Frontend God", status: true },
-    { id: 4, activity: "Figure out life", status: true },
-  ],
+  todos: defaultValues,
+  activeTodos: defaultValues,
+  completedTodos: [],
+
+  all: true,
+  completed: false,
+  active: false,
 };
 
 const todoSlice = (state = initialState, action) => {
@@ -22,17 +30,51 @@ const todoSlice = (state = initialState, action) => {
         ],
       };
     case "toggleTodo": {
+      const newTodos = state.todos.map((todo) => {
+        if (todo.id == action.payload) {
+          return {
+            ...todo,
+            status: !todo.status,
+          };
+        }
+        return todo;
+      });
       return {
         ...state,
-        todos: state.todos.map((todo) => {
-          if (todo.id == action.payload) {
-            return {
-              ...todo,
-              status: !todo.status,
-            };
-          }
-          return todo;
-        }),
+        todos: newTodos,
+        activeTodos: newTodos.filter((todo) => todo.status),
+        completedTodos: newTodos.filter((todo) => !todo.status),
+      };
+    }
+    case "toggleActive": {
+      return {
+        ...state,
+        active: true,
+        completed: false,
+        all: false,
+      };
+    }
+    case "toggleCompleted": {
+      return {
+        ...state,
+        completed: true,
+        active: false,
+        all: false,
+      };
+    }
+    case "toggleAll": {
+      return {
+        ...state,
+        all: true,
+        completed: false,
+        active: false,
+      };
+    }
+    case "clearCompleted": {
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.status),
+        completedTodos: [],
       };
     }
     default:

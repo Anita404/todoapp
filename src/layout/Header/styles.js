@@ -26,3 +26,7 @@ export const Title = styled.h1`
   line-height: normal;
   letter-spacing: 15px;
 `;
+
+export const ThemeToggler = styled.div`
+  cursor: pointer;
+`;

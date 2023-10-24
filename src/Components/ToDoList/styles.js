@@ -39,3 +39,12 @@ export const FooterItem = styled.div`
   line-height: normal;
   letter-spacing: -0.194px;
 `;
+
+export const ClearItems = styled(FooterItem)`
+  cursor: pointer;
+`;
+
+export const ToDoListContainer = styled.div`
+  max-height: 330px;
+  overflow-y: auto;
+`;
