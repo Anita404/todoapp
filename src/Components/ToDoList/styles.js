@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   z-index: 1;
   border-radius: 5px;
-  background: #fff;
-  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  background: ${({ theme }) => theme.containerColor};
+  box-shadow: ${({ theme }) => theme.boxShadow};
   width: 587px;
+  transition: all 0.5s linear;
 `;
 
 export const Footer = styled.div`
@@ -17,7 +18,7 @@ export const Footer = styled.div`
 `;
 
 export const FilterButton = styled.button`
-  color: #9495a5;
+  color: ${({ theme }) => theme.mainTextColor};
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -46,5 +47,5 @@ export const ClearItems = styled(FooterItem)`
 
 export const ToDoListContainer = styled.div`
   max-height: 330px;
-  overflow-y: auto;
+  overflow-y: scroll;
 `;

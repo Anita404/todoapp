@@ -4,30 +4,19 @@ import Header from "./layout/Header";
 import ToDoList from "./Components/ToDoList";
 import { Provider } from "react-redux";
 import store from "./Store/store";
+import { GlobalStyles } from "./GlobalStyles";
+import Theme, { darkTheme, lightTheme } from "./theme";
 
 export default function App() {
   return (
     <Provider store={store}>
-      <Page>
-        <Header />
-        <ToDoList />
-      </Page>
+      <Theme>
+        <GlobalStyles />
+        <Page>
+          <Header />
+          <ToDoList />
+        </Page>
+      </Theme>
     </Provider>
   );
 }
-
-// return (
-//   <>
-//     {/* <HeadingContainer>
-//       To Do App
-//       {/* <themeIcon fxn /> */}
-//       {/* would be at the edge of the heading container  */}
-//     </HeadingContainer>
-//     <TaskCreation></TaskCreation>
-//     <ToDoList>
-//       <StatsContainer></StatsContainer>
-//       {/* will be in the styles for toDoList */}
-//     </ToDoList>
-//     <Instructions> </Instructions> */}
-//   </>
-// );

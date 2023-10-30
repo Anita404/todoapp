@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Container, HeaderContainer, ThemeToggler, Title } from "./styles";
 import MoonIcon from "../../Icons/MoonIcon.svg";
 import SunIcon from "../../Icons/SunIcon.svg";
 import TaskCreation from "../../Components/TaskCreation";
+import { ThemeContext } from "../../theme";
 
 const Header = () => {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme(theme == "light" ? "dark" : "light");
-  };
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <HeaderContainer>

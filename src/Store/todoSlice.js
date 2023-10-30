@@ -28,6 +28,14 @@ const todoSlice = (state = initialState, action) => {
             id: state.todos.length + 1,
           },
         ],
+        activeTodos: [
+          ...state.activeTodos,
+          {
+            activity: action.payload,
+            status: true,
+            id: state.activeTodos.length + 1,
+          },
+        ],
       };
     case "toggleTodo": {
       const newTodos = state.todos.map((todo) => {

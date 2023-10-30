@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 20px 0px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.containerColor};
   display: flex;
   border-radius: 5px;
   align-items: center;
-  border-bottom: 1px #e3e4f1 solid;
+  border-bottom: 1px ${({ theme }) => theme.brdColor} solid;
   padding: 20px 24px;
-  color: #494c6b;
+  color: ${({ theme }) => theme.txtColor};
+  transition: all 0.5s linear;
 
   &:first-child {
   }

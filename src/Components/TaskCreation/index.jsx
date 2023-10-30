@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { TaskContainer } from "./styles";
-import Checkbox from "../CheckboxButton";
 import Input from "../Input";
 import { useDispatch } from "react-redux";
 
